@@ -1,12 +1,13 @@
-import {Link} from "react-router-dom";
+import React from 'react'
+import { Link } from 'react-router-dom'
 
-export default function About() {
+export default function About () {
   return (
     <>
       <main>
         <h2>Who are we?</h2>
         <p>
-          That feels like an existential question, don't you
+          That feels like an existential question, dont you
           think?
         </p>
       </main>
@@ -14,5 +15,5 @@ export default function About() {
         <Link to="/">Home</Link>
       </nav>
     </>
-  );
+  )
 }

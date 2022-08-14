@@ -1,20 +1,20 @@
-import { useRoutes } from "react-router-dom";
-import Home from '../views/home.jsx'
-import About from '../views/about.jsx'
+import React from 'react'
+import { useRoutes } from 'react-router-dom'
+import Layout from '../layout/index.jsx'
+// import Home from '../views/home.jsx'
+// import About from '../views/about.jsx'
 
 export const routerConfig = [
-    {
-        path: '/',
-        element: <Home />
-    },
-    {
-        path: '/about',
-        element: <About />
-    }
+  {
+    path: '/',
+    element: <Layout />
+  },
+  {
+    path: '/about',
+    element: <Layout />
+  }
 ]
 
-const Router = () => {
-    return useRoutes(routerConfig)
+export const Router = () => {
+  return useRoutes(routerConfig)
 }
-
-export default Router
