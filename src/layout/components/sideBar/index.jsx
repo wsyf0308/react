@@ -1,11 +1,19 @@
 import React, { useState } from 'react'
-import { Layout } from 'antd'
+import { Layout, Menu } from 'antd'
+import { useNavigate } from 'react-router-dom'
+
+import { routerConfig } from '../../../router/index.jsx'
 
 const { Sider } = Layout
 export default function SideBar () {
   const [collapsed, setCollapsed] = useState(false)
+  const navigate = useNavigate()
   const handleClick = () => {
     setCollapsed(!collapsed)
+  }
+  const jumpRouter = (item) => {
+    console.log(item)
+    navigate(item.key)
   }
   return (
     <>
@@ -23,7 +31,12 @@ export default function SideBar () {
         }}
       >
           <div className="logo" onClick={handleClick}/>
-          {/* <Menu theme="dark" mode="inline" defaultSelectedKeys={['4']} items={items} /> */}
+           <Menu
+               theme="dark"
+               mode="inline"
+               items={routerConfig}
+               onClick={jumpRouter}
+           />
       </Sider>
     </>
   )
